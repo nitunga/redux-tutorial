@@ -6,17 +6,17 @@ import * as serviceWorker from './serviceWorker';
 
 import store from './store/index'
 
+import {Provider} from 'react-redux'
 
-let render =() =>{
+
   ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <App />  
+  </Provider>
+  ,document.getElementById('root')
 );
-}
-store.subscribe(render)
-render()
+
+
 
 
 // If you want your app to work offline and load faster, you can change
